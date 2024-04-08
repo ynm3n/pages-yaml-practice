@@ -1,0 +1,22 @@
+openapi: 3.1.0
+
+info:
+  title: nemmy API
+  description: |
+    nemmyで利用するAPIの仕様書です。<br />
+    http://localhost:8080/apiは仮のURLです。
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:8080/api
+
+paths:
+  /users/{username}/subjects:
+    $ref: "./subjects/paths.yaml#/subjects"
+  /users/{username}/subjects/{subjectId}:
+    $ref: "./subjects/paths.yaml#/subjects_{subjectId}"
+
+components:
+  schemas:
+    Subject:
+      $ref: "./subjects/schemas.yaml#/Subject"
